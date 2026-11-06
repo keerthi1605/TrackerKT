@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Theme follows who is logged in: Keerthi = lilac + moderate-purple text, Tarun = sage + hunter-green text. */
+:root, [data-theme="keerthi"] {
+  --accent: #c8a2c8;       /* lilac */
+  --accent-soft: #f1e4f1;
+  --accent-ink: #7b4fae;   /* moderate purple, used for text */
+  --page: #faf5fb;
+  --side: #eadcec;         /* sidebar: a darker shade of the page background */
+  --text: #2a2038;
+}
+[data-theme="tarun"] {
+  --accent: #9caf88;       /* sage */
+  --accent-soft: #e6ecde;
+  --accent-ink: #355e3b;   /* hunter green, used for text */
+  --page: #eef3e8;         /* light greenish background */
+  --side: #d9e3cd;
+  --text: #1f2d22;
+}
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--accent-ink);
+}
+
+:root { color-scheme: light; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--page);
+  color: var(--text);
+  transition: background-color .25s;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+.card { background: #fff; border-radius: 1.25rem; box-shadow: 0 1px 2px rgb(30 27 46 / .06), 0 4px 16px rgb(30 27 46 / .04); }
+.input { width: 100%; min-height: 2.75rem; box-sizing: border-box; -webkit-appearance: none; appearance: none; font-family: inherit; color: inherit; border-radius: .75rem; border: 1px solid #e4e0f0; background: #fff; padding: .6rem .8rem; font-size: 1rem; outline: none; }
+.input:focus { border-color: var(--accent-ink); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 45%, transparent); }
+.btn { border-radius: .75rem; padding: .6rem 1rem; font-weight: 600; background: color-mix(in srgb, var(--accent) 55%, white); color: var(--accent-ink); }
+.btn:active { transform: scale(.98); }
+.btn-ghost { border-radius: .75rem; padding: .6rem 1rem; font-weight: 600; background: var(--accent-soft); color: var(--accent-ink); }
+.btn-danger { border-radius: .75rem; padding: .6rem 1rem; font-weight: 600; background: #fee2e2; color: #991b1b; }
+.label { display: block; font-size: .8rem; font-weight: 600; color: #6b6585; margin-bottom: .25rem; }

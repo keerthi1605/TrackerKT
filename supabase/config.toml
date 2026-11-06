@@ -1,0 +1,7 @@
+project_id = "our-tracker"
+
+[functions.pin-login]
+verify_jwt = false
+
+[functions.change-pin]
+verify_jwt = false   # the function verifies the caller's JWT itself and checks is_admin
