@@ -32,10 +32,14 @@ npm run dev
 
 ## Deploy to GitHub Pages
 
-1. Push this repo to GitHub (branch `main`).
-2. Repo **Settings → Pages → Source: GitHub Actions**.
-3. Repo **Settings → Secrets and variables → Actions → New secret:** `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`.
-4. Push to `main` — the workflow builds and publishes. Open the URL on both phones and "Add to Home Screen".
+The site is built on your computer (using your local `.env`) and published to the `gh-pages` branch.
+
+1. Make sure `.env` has your Supabase URL + anon key. The base path (`/TrackerKT/`) is set in `.env.production` — change it if the repo is renamed.
+2. Run `npm run deploy` (builds, then pushes `dist` to the `gh-pages` branch).
+3. First time only: repo **Settings → Pages → Source: Deploy from a branch → Branch: `gh-pages` / `(root)`**.
+4. Site: `https://keerthi1605.github.io/TrackerKT/`. Open it on both phones and "Add to Home Screen".
+
+Re-run `npm run deploy` whenever you change the code. Source code lives on `main`.
 
 ## Security notes
 
